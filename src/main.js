@@ -11,12 +11,8 @@ Vue.use(Vuefire)
 Vue.use(VueResource)
 
 /* eslint-disable no-new */
-import firebase from './service/firebase'
 new Vue({
   el: '#app',
-  firebase: {
-    cat: firebase.database.ref('cat')
-  },
   router,
   template: '<App/>',
   components: { App }

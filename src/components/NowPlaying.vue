@@ -22,6 +22,14 @@
                  @click="">
                 Detail
                 </a>
+                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+                 @click="">
+                Rate
+                </a>
+                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+                 @click="">
+                Book
+                </a>
             </div>
             <div class="mdl-card__menu">
                 <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
