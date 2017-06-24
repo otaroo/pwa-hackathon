@@ -27,6 +27,14 @@
         <router-view></router-view>
       </div>
     </main>
+    <footer class="mdl-mini-footer">
+  <div class="mdl-mini-footer__left-section">
+    <ul class="mdl-mini-footer__link-list">
+      <li><a href="#">Help</a></li>
+      <li><a href="#">Privacy & Terms</a></li>
+    </ul>
+  </div>
+</footer>
   </div>
 </template>
 

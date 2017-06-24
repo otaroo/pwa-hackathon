@@ -3,7 +3,7 @@
     <div class="mdl-grid">
       <div class="mdl-cell mdl-cell--3-col mdl-cell mdl-cell--1-col-tablet mdl-cell--hide-phone"></div>   
       <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-phone">
-        <div v-for="movie in this.movies" class="demo-card-wide mdl-card mdl-shadow--2dp card-modify" @click="moviedatail(movie)">
+        <div v-for="movie in this.movies" class="demo-card-wide mdl-card mdl-shadow--2dp card-modify">
             <div class="mdl-card__title"
              :style="{ backgroundImage: 'url(https://image.tmdb.org/t/p/w533_and_h300_bestv2' + movie.backdrop_path + ')' }">
                 <h2 class="mdl-card__title-text">{{movie.title}}</h2>
@@ -18,14 +18,9 @@
             </div>
             <div class="mdl-card__actions mdl-card--border">
                 <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
-                 @click="">
+                 @click="moviedatail(movie.id)">
                 Detail
                 </a>
-            </div>
-            <div class="mdl-card__menu">
-                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-                <i class="material-icons">share</i>
-                </button>
             </div>
         </div>
       </div>
@@ -40,8 +35,8 @@ export default {
     }
   },
   methods: {
-    moviedatail (movie) {
-      console.log(movie)
+    moviedatail (id) {
+      this.$router.push({name: 'detail', params: { id: id }})
     }
   },
   mounted () {
