@@ -5,7 +5,6 @@
         <span class="mdl-layout-title">{{title}}</span>
         <div class="mdl-layout-spacer"></div>
         <nav class="mdl-navigation" v-if="login">
-          <span style="font-size:15px">{{displayName}}</span>
           <button class="mdl-button mdl-js-button mdl-button--icon" style="margin-left:10px" @click="logout"><i class="material-icons">input</i></button>
         </nav>
         <nav class="mdl-navigation" v-if="!login">
@@ -28,13 +27,13 @@
       </div>
     </main>
     <footer class="mdl-mini-footer">
-  <div class="mdl-mini-footer__left-section">
-    <ul class="mdl-mini-footer__link-list">
-      <li><a href="#">Help</a></li>
-      <li><a href="#">Privacy & Terms</a></li>
-    </ul>
-  </div>
-</footer>
+    <div class="mdl-mini-footer__left-section">
+      <ul class="mdl-mini-footer__link-list">
+        <li><a href="#">Help</a></li>
+        <li><a href="#">Privacy & Terms</a></li>
+      </ul>
+    </div>
+  </footer>
   </div>
 </template>
 
@@ -112,6 +111,7 @@ export default {
 <style>
   @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
   @import url('https://code.getmdl.io/1.3.0/material.brown-orange.min.css');
+  @import url('spin.css');
 body {
   margin: 0;
 }

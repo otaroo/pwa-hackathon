@@ -36,7 +36,7 @@ export default {
   },
   methods: {
     moviedatail (id) {
-      this.$router.push({name: 'detail', params: { id: id }})
+      this.$router.push({name: 'Detail', params: { id: id, back: 'Upcoming' }})
     }
   },
   mounted () {

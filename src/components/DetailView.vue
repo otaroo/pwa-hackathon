@@ -23,6 +23,12 @@
               <span class="mdl-chip__text" >{{ g.name }}</span> 
           </span>
         </div>
+        <div class="comment">
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+         @click="back()">
+         Back
+         </a>
+        </div>
       </div>
       <div class="spinner" v-if="!load">
         <div class="double-bounce1"></div>
@@ -39,6 +45,11 @@ export default {
       load: false
     }
   },
+  methods: {
+    back () {
+      this.$router.push({name: this.$route.params.back})
+    }
+  },
   mounted () {
     this.$http.get('https://api.themoviedb.org/3/movie/' + this.$route.params.id + '?api_key=8344543a9de667411287240ee824de04&language=en-US')
     .then(res => {
@@ -46,7 +57,6 @@ export default {
       var obj = JSON.parse(res.bodyText)
       _this.movies = obj
       _this.load = true
-      console.log(obj)
     })
   }
 }
@@ -81,46 +91,5 @@ export default {
      flex: 1;
      text-align: left;
    }
-  .spinner {
-    width: 40px;
-    height: 40px;
-
-    position: relative;
-    margin: 100px auto;
-  }
-
-  .double-bounce1, .double-bounce2 {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background-color: #333;
-    opacity: 0.6;
-    position: absolute;
-    top: 0;
-    left: 0;
-    
-    -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
-    animation: sk-bounce 2.0s infinite ease-in-out;
-  }
-
-  .double-bounce2 {
-    -webkit-animation-delay: -1.0s;
-    animation-delay: -1.0s;
-  }
-
-  @-webkit-keyframes sk-bounce {
-    0%, 100% { -webkit-transform: scale(0.0) }
-    50% { -webkit-transform: scale(1.0) }
-  }
-
-  @keyframes sk-bounce {
-    0%, 100% { 
-      transform: scale(0.0);
-      -webkit-transform: scale(0.0);
-    } 50% { 
-      transform: scale(1.0);
-      -webkit-transform: scale(1.0);
-    }
-  }
 </style>
 

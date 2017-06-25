@@ -23,23 +23,21 @@
                 Detail
                 </a>
                 <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
-                 @click="">
-                Rate
-                </a>
-                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
-                 @click="book(movie)">
+                 @click="book(movie.id)">
                 Book
                 </a>
             </div>
         </div>
       </div>
     </div>
-    
+    <div id="demo-toast-example" class="mdl-js-snackbar mdl-snackbar">
+      <div class="mdl-snackbar__text"></div>
+      <button class="mdl-snackbar__action" type="button"></button>
+    </div>
   </div>
 </template>
 <script>
 import firebase from 'firebase'
-const db = firebase.database()
 export default {
   data () {
     return {
@@ -48,10 +46,20 @@ export default {
     }
   },
   methods: {
-    book (movie) {
-      var user = firebase.auth().currentUser
-      const movieRef = db.ref('/').child(movie.id)
-      movieRef.push(user.uid)
+    book (id, title) {
+      var _this = this
+      firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+          _this.$router.push({name: 'Booking', params: {id: id, back: 'NowPlaying'}})
+        } else {
+          var snackbarContainer = document.querySelector('#demo-toast-example')
+          var data = {message: 'Please Login'}
+          snackbarContainer.MaterialSnackbar.showSnackbar(data)
+        }
+      })
+    },
+    moviedatail (id) {
+      this.$router.push({name: 'Detail', params: {id: id, back: 'NowPlaying'}})
     }
   },
   mounted () {
