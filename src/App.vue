@@ -28,13 +28,7 @@
         <router-view></router-view>
       </div>
     </main>
-    <footer class="mdl-mini-footer">
-    <div class="mdl-mini-footer__left-section">
-      <ul class="mdl-mini-footer__link-list">
-        2017 Taro - Built with 💛 using 🔥 Firebase
-      </ul>
-    </div>
-  </footer>
+   
   </div>
 </template>
 
