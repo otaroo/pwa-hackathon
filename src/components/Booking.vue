@@ -9,7 +9,7 @@
     <div class="mdl-grid" v-if="this.load_book">
         <div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-phone" v-for="(s,i) in 12">
             <button :class="setClasee('A'+(i+1))" style="width:100%" :disabled="disabled('A'+(i+1))" @click="selectSeat('A'+(i+1))">
-           <i class="material-icons">event_seat</i> A{{i+1}} 
+           <i class="material-icons" v-if="!mySeat('A'+(i+1))">event_seat</i><i class="material-icons" v-if="mySeat('A'+(i+1))">done</i> A{{i+1}}
             </button>
         </div>
     </div>
@@ -70,7 +70,11 @@ export default {
         if (idx === -1) {
           _this.seatSelect.push({
             seat: id,
-            user: user.uid
+            user: user.uid,
+            movie: _this.movies.title,
+            img: _this.movies.backdrop_path,
+            date: _this.movies.release_date,
+            movieId: _this.movies.id
           })
         } else {
           _this.seatSelect.splice(idx, 1)
@@ -93,6 +97,18 @@ export default {
         return false
       } else {
         return true
+      }
+    },
+    mySeat (id) {
+      var user = firebase.auth().currentUser
+      const userBook = this.booking.map(s => s.user)
+      const userSeat = this.booking.map(s => s.seat)
+      const uid = userBook.indexOf(user.uid)
+      const useat = userSeat.indexOf(id)
+      if (uid !== -1 && useat !== -1) {
+        return true
+      } else {
+        return false
       }
     },
     setClasee (id) {

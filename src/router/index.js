@@ -5,6 +5,7 @@ import NowPlaying from '../components/NowPlaying'
 import DetailView from '../components/DetailView'
 import Upcoming from '../components/Upcoming'
 import Booking from '../components/Booking'
+import Booked from '../components/Booked'
 
 Vue.use(Router)
 
@@ -29,6 +30,11 @@ export default new Router({
       path: '/Booking/:id/:back',
       name: 'Booking',
       component: Booking
+    },
+    {
+      path: '/Booked',
+      name: 'Booked',
+      component: Booked
     }
   ]
 })

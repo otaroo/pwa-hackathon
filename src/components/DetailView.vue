@@ -82,7 +82,7 @@ export default {
     display: -webkit-flex; /* Safari */
     -webkit-align-items: center; /* Safari 7.0+ */
     display: flex;
-    align-items: flex-start;
+    align-items: center;
   }
   .moive-detail i {
     flex: 1;

@@ -19,6 +19,7 @@
       <nav class="mdl-navigation">
         <router-link class="mdl-navigation__link" to="/" @click.native="hideMenu('Now Playing')"><i class="material-icons">visibility</i> Now Playing</router-link>
         <router-link class="mdl-navigation__link" to="/Upcoming" @click.native="hideMenu('Upcoming')"><i class="material-icons">watch_later</i> Upcoming</router-link>
+        <router-link class="mdl-navigation__link" to="/Booked" @click.native="hideMenu('My Booked')"><i class="material-icons">bookmark_border</i> Your Booked</router-link>
       </nav>
     </div>
     <main class="mdl-layout__content">
