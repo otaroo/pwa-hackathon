@@ -9,7 +9,7 @@
         </nav>
         <nav class="mdl-navigation" v-if="!login">
          <button class="mdl-button mdl-js-button mdl-button--icon" @click="loginFacebook">
-         <i class="material-icons">pan_tool</i>
+         <i class="fa fa-facebook" aria-hidden="true"></i>
          </button>
         </nav>
       </div>
@@ -20,6 +20,7 @@
         <router-link class="mdl-navigation__link" to="/" @click.native="hideMenu('Now Playing')"><i class="material-icons">visibility</i> Now Playing</router-link>
         <router-link class="mdl-navigation__link" to="/Upcoming" @click.native="hideMenu('Upcoming')"><i class="material-icons">watch_later</i> Upcoming</router-link>
         <router-link class="mdl-navigation__link" to="/Booked" @click.native="hideMenu('My Booked')"><i class="material-icons">bookmark_border</i> Your Booked</router-link>
+        <router-link class="mdl-navigation__link" to="/About" @click.native="hideMenu('About')"><i class="material-icons">sentiment_very_satisfied</i> About</router-link>
       </nav>
     </div>
     <main class="mdl-layout__content">
@@ -30,8 +31,7 @@
     <footer class="mdl-mini-footer">
     <div class="mdl-mini-footer__left-section">
       <ul class="mdl-mini-footer__link-list">
-        <li><a href="#">Help</a></li>
-        <li><a href="#">Privacy & Terms</a></li>
+        2017 Taro - Built with 💛 using 🔥 Firebase
       </ul>
     </div>
   </footer>

@@ -1,6 +1,6 @@
-# movieticket
+# Movie Ticket
 
-> PWA Hackathon
+> Project for PWA Hackathon
 
 ## Build Setup
 
